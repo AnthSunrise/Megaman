@@ -73,7 +73,7 @@ update {
     // HP específica de Magma Dragoon
     current.dragoonHP = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013C19C);
 
-    // HP en slots dinámicos posibles para Slash Beast
+    // HP Slash Beast
     current.slashHP1 = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013C064);
     current.slashHP2 = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013BF2C);
     current.slashHP3 = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013BFC8);
@@ -118,7 +118,7 @@ reset {
 }
 
 split {
-    // --- MANEJO CENTRALIZADO DEL TIMER DE DELAY ---
+    // --- MANEJO DE DELAY ---
     if (vars.timerActive) {
         if (Environment.TickCount - vars.timerStart >= vars.targetDelay) {
             vars.timerActive = false;
@@ -128,7 +128,7 @@ split {
         return false;
     }
 
-	// 1. INTRO STAGE 2 (0x0100) - Eregon
+	// 1. INTRO STAGE 2 (0x0100) - Eregion
     if (current.stageID == 0x0100) {
         // Step 1: Detectar que la pelea con Eregon inició (HP cargada a 0x30)
         if (!vars.introBossActive && !vars.introDefeated && current.bossHP == 0x30 && current.playerHP > 0) {
@@ -141,7 +141,7 @@ split {
             vars.introDefeated = false;
         }
 
-        // Step 2: Confirmar la derrota de Eregon (HP cae a 0 tras estar activo)
+        // Step 2: Confirmar la derrota de Eregion
         if (vars.introBossActive && old.bossHP > 0 && current.bossHP == 0 && current.playerHP > 0) {
             vars.introBossActive = false;
             vars.introDefeated = true; // Solo ahora permitimos contar los diálogos finales
@@ -194,7 +194,7 @@ split {
         }
     }
 
-    // 4. MAVERICK STAGE 0x0107 - Storm Owl (Excepción Mini-jefe)
+    // 4. MAVERICK STAGE 0x0107 - Storm Owl
     if (current.stageID == 0x0107) {
         if (!vars.bossActive && current.bossHP == 0x30 && current.playerHP > 0) vars.bossActive = true;
         if (current.playerHP == 0) vars.bossActive = false;
@@ -213,7 +213,7 @@ split {
         vars.owlKills = 0;
     }
 
-	// 5. MAVERICK STAGE 0x0104 - Magma Dragoon (HP Especial)
+	// 5. MAVERICK STAGE 0x0104 - Magma Dragoon
     if (current.stageID == 0x0104) {
         // Step 1: Detectar inicio real de la pelea
         if (!vars.dragoonActive && !vars.dragoonDefeated && current.dragoonHP == 0x30 && current.playerHP > 0) {
@@ -225,7 +225,7 @@ split {
             vars.dragoonDefeated = false;
         }
 
-        // Step 2: Confirmar la derrota (HP cae de >0 a 0)
+        // Step 2: Confirmar la derrota
         if (vars.dragoonActive && old.dragoonHP > 0 && current.dragoonHP == 0 && current.playerHP > 0) {
             vars.dragoonActive = false;
             vars.dragoonDefeated = true;
@@ -272,7 +272,7 @@ split {
         }
     }
 
-    // 8. MAVERICK STAGE 0x0108 - Slash Beast (Multidirección Dinámica)
+    // 8. MAVERICK STAGE 0x0108 - Slash Beast
     if (current.stageID == 0x0108) {
         // Se activa si cualquiera de los slots registra HP llena (0x30)
         if (!vars.slashBeastActive && 
@@ -396,7 +396,7 @@ split {
         vars.bossRushSplitDone = false;
     }
 
-    // 14. SIGMA STAGE (0x010C) - Split Final por Coordenada X
+    // 14. SIGMA STAGE (0x010C)
     if (current.stageID == 0x010C) {
         if (!vars.finalSplitDone) {
             if (old.playerX <= 0x06E0 && current.playerX > 0x06E0) {

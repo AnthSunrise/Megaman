@@ -81,12 +81,12 @@ update {
     // HP específica de Magma Dragoon
     current.dragoonHP = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013C19C);
 
-    // HP en slots dinámicos para Slash Beast
+    // HP específica de Slash Beast
     current.slashHP1 = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013C064);
     current.slashHP2 = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013BF2C);
     current.slashHP3 = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013BFC8);
 
-    // HP de Double (comparte dirección con la gema de Iris)
+    // HP de Double e Iris
     current.doubleHP = game.ReadValue<byte>((IntPtr)vars.ramBase + 0x0013bfc8);
     current.playerX = game.ReadValue<ushort>((IntPtr)vars.ramBase + 0x0013e47a);
 
@@ -131,7 +131,7 @@ reset {
 }
 
 split {
-    // --- MANEJO CENTRALIZADO DEL TIMER DE DELAY ---
+    // --- MANEJO DEL TIMER DE DELAY ---
     if (vars.timerActive) {
         if (Environment.TickCount - vars.timerStart >= vars.targetDelay) {
             vars.timerActive = false;
@@ -141,7 +141,7 @@ split {
         return false;
     }
 
-    // 1. INTRO STAGE 2 (0x0100) - Eregon
+    // 1. INTRO STAGE 2 (0x0100) - Eregion
     if (current.stageID == 0x0100) {
         if (!vars.introBossActive && !vars.introDefeated && current.bossHP == 0x30 && current.playerHP > 0) {
             vars.introBossActive = true;
@@ -203,7 +203,7 @@ split {
         }
     }
 
-    // 4. MAVERICK STAGE 0x0107 - Storm Owl (Excepción Mini-jefe)
+    // 4. MAVERICK STAGE 0x0107 - Storm Owl
     if (current.stageID == 0x0107) {
         if (!vars.bossActive && current.bossHP == 0x30 && current.playerHP > 0) vars.bossActive = true;
         if (current.playerHP == 0) vars.bossActive = false;
@@ -222,7 +222,7 @@ split {
         vars.owlKills = 0;
     }
 
-    // 5. MAVERICK STAGE 0x0104 - Magma Dragoon (Derrota Base & Revisit)
+    // 5. MAVERICK STAGE 0x0104 - Magma Dragoon
     if (current.stageID == 0x0104) {
         // CASO A: PELEA PRINCIPAL
         if (!vars.dragoonSplitDone) {
@@ -249,7 +249,7 @@ split {
                 vars.timerActive = true;
             }
         }
-        // CASO B: REVISIT (Pieza de la Fourth Armor)
+        // CASO B: REVISIT
         else {
             // Si el split de Dragoon ya se hizo y la coordenada X cae a 0x0000 por el Escape
             if (old.playerX > 0 && current.playerX == 0) {
@@ -289,7 +289,7 @@ split {
         }
     }
 
-    // 8. MAVERICK STAGE 0x0108 - Slash Beast (Multidirección Dinámica)
+    // 8. MAVERICK STAGE 0x0108 - Slash Beast
     if (current.stageID == 0x0108) {
         if (!vars.slashBeastActive && 
            (current.slashHP1 == 0x30 || current.slashHP2 == 0x30 || current.slashHP3 == 0x30) && 
@@ -450,7 +450,7 @@ split {
         vars.bossRushSplitDone = false;
     }
 
-    // 15. SIGMA STAGE (0x010C) - Split Final por Coordenada X
+    // 15. SIGMA STAGE (0x010C)
     if (current.stageID == 0x010C) {
         if (!vars.finalSplitDone) {
             if (old.playerX <= 0x06E0 && current.playerX > 0x06E0) {

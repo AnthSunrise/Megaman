@@ -7,7 +7,7 @@ state("duckstation") {}
 
 startup {
     settings.Add("useGameTime", true, "Autosplitter X4 - Zero 100%");
-    settings.Add("enableIGT", true, "IGT Mode - Only count time you have control of zero.", "useGameTime");
+    settings.Add("enableIGT", true, "IGT Mode - Only count the time you have control of zero.", "useGameTime");
     
     LiveSplit.Model.Input.EventHandlerT<LiveSplit.Model.TimerPhase> resetAction = (s,e) => {
         vars.bossRushKills = 0;

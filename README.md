@@ -13,7 +13,7 @@ While I'm not against sharing my scripts with the community, i initially kept th
 * **Disclaimer:** I am **not** responsible for any lost runs or inaccurate times caused by unexpected bugs.
 
 > [!TIP]
-> I strongly encourage everyone to report any bugs or suggested changes so i can make these autosplitters as accurate as possible!
+> I strongly encourage everyone to report any bugs or suggested changes to me on discord so i can make these autosplitters as accurate as possible!
 
 ---
 

@@ -6,8 +6,8 @@ state("duckstation-nogui-x64-ReleaseLTCG") {}
 state("duckstation") {}
 
 startup {
-    settings.Add("useGameTime", true, "Autosplitter X4 - Custom Delays per Boss");
-    settings.Add("enableIGT", true, "Pausar tiempo al perder control del personaje (Modo IGT/LRT)", "useGameTime");
+    settings.Add("useGameTime", true, "Autosplitter X4 - Zero 100%");
+    settings.Add("enableIGT", true, "IGT Mode - Only count time you have control of zero.", "useGameTime");
     
     LiveSplit.Model.Input.EventHandlerT<LiveSplit.Model.TimerPhase> resetAction = (s,e) => {
         vars.bossRushKills = 0;
@@ -138,7 +138,7 @@ split {
         return false;
     }
 
-    // 1. INTRO STAGE 2 (0x0100) - Eregon
+    // 1. INTRO STAGE 2 (0x0100) - Eregion
     if (current.stageID == 0x0100) {
         if (!vars.introBossActive && !vars.introDefeated && current.bossHP == 0x30 && current.playerHP > 0) {
             vars.introBossActive = true;
@@ -200,7 +200,7 @@ split {
         }
     }
 
-    // 4. MAVERICK STAGE 0x0107 - Storm Owl (Excepción Mini-jefe)
+    // 4. MAVERICK STAGE 0x0107 - Storm Owl
     if (current.stageID == 0x0107) {
         if (!vars.bossActive && current.bossHP == 0x30 && current.playerHP > 0) vars.bossActive = true;
         if (current.playerHP == 0) vars.bossActive = false;
@@ -219,7 +219,7 @@ split {
         vars.owlKills = 0;
     }
 
-    // 5. MAVERICK STAGE 0x0104 - Magma Dragoon (HP Especial)
+    // 5. MAVERICK STAGE 0x0104 - Magma Dragoon
     if (current.stageID == 0x0104) {
         if (!vars.dragoonActive && !vars.dragoonDefeated && current.dragoonHP == 0x30 && current.playerHP > 0) {
             vars.dragoonActive = true;
@@ -275,7 +275,7 @@ split {
         }
     }
 
-    // 8. MAVERICK STAGE 0x0108 - Slash Beast (Multidirección Dinámica)
+    // 8. MAVERICK STAGE 0x0108 - Slash Beast
     if (current.stageID == 0x0108) {
         if (!vars.slashBeastActive && 
            (current.slashHP1 == 0x30 || current.slashHP2 == 0x30 || current.slashHP3 == 0x30) && 
@@ -394,7 +394,7 @@ split {
         vars.bossRushSplitDone = false;
     }
 
-    // 14. SIGMA STAGE (0x010C) - Split Final por Coordenada X
+    // 14. SIGMA STAGE (0x010C)
     if (current.stageID == 0x010C) {
         if (!vars.finalSplitDone) {
             if (old.playerX <= 0x06E0 && current.playerX > 0x06E0) {

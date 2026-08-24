@@ -1,3 +1,6 @@
+// Made by AntharasSunrise, discord: antharas_sunrise
+// This is not a script for a main leaderboard, this is more of a silly test script in an attempt to make X4 run through in-game time, only counting the time you have control of Zero just like X5 and X6 works.
+
 state("duckstation-qt-x64-ReleaseLTCG") {}
 state("duckstation-nogui-x64-ReleaseLTCG") {}
 state("duckstation") {}

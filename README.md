@@ -17,7 +17,7 @@ While I'm not against sharing my scripts with the community, i initially kept th
 
 ---
 
-### X5 and X6 "All Stages" Splitters
+### X5 and X6 "All Stages" Autosplitters
 
 I also have functional **All Stages** autosplitters for both *X5* and *X6* with integrated IGT timer. However, these current versions split on **screen transitions** rather than on the global cue (Zero/X victory pose after a boss fight). 
 

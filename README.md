@@ -4,6 +4,8 @@ Welcome! Some of you may have noticed in recent streams that a few runners have 
 
 While I'm not against sharing my scripts with the community, i initially kept them within a close circle of trust out of caution, mainly due to the slight fear that a bug might ruin a good run. However, due to a few people asking for them through DMs, i’ve decided to share them openly.
 
+Special thanks to JohnnyGo and Coltaho for their old splitters which worked as references and to SCWeeb1, Ch0cman, Lillybethrosenthal and EZE_O for helping me test the scripts.
+
 ---
 
 ### Important Details & Compatibility

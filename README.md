@@ -1,15 +1,15 @@
-# Mega Man X5 & X6 DuckStation IGT Autosplitters
+# Mega Man X4, X5 & X6 DuckStation Autosplitters
 
-Welcome! Some of you may have noticed in recent streams that a few runners have started using a modified version of **LiveSplit** adjusted to work as an **In-Game Time (IGT)** timer for both *Mega Man X5* and *Mega Man X6*.
+Welcome! Some of you may have noticed in recent streams that a few runners have started using a modified version of **LiveSplit** adjusted to work as an **In-Game Time (IGT)** timer for both *Mega Man X5* and *Mega Man X6* as well as Autosplits.
 
-While I'm not against sharing my scripts with the community, I initially kept them within a close circle of trust out of caution—mainly due to the slight fear that a bug might ruin a good run. However, given the growing interest from the community, I’ve decided to share them openly.
+While I'm not against sharing my scripts with the community, I initially kept them within a close circle of trust out of caution—mainly due to the slight fear that a bug might ruin a good run. However, due to a few people asking for them through DMs, I’ve decided to share them openly.
 
 ---
 
 ### Important Details & Compatibility
 
-* **Platform:** These scripts are designed **exclusively for DuckStation**.
-* **Tested Versions:** We’ve tested different game versions and regional releases, and everything works as expected so far (though there's always a small chance something was missed).
+* **Platform:** These scripts are designed **exclusively for DuckStation**, we've tested several versions and they seemed to work on most.
+* **Tested Versions:** For X4 i'm only working on USA version, X5 and X6 i'm working on both JAP and USA.
 * **Disclaimer:** I am **not** responsible for any lost runs or inaccurate times caused by unexpected bugs.
 
 > [!TIP]
@@ -19,9 +19,6 @@ While I'm not against sharing my scripts with the community, I initially kept th
 
 ### Upcoming Features & "All Stages" Splitters
 
-I also have functional **All Stages** autosplitters for both *X5* and *X6* with integrated IGT timers. However, these current versions split on **screen transitions** rather than on the global cue (Zero/X victory pose after a boss fight). 
+I also have functional **All Stages** autosplitters for both *X5* and *X6* with integrated IGT timer. However, these current versions split on **screen transitions** rather than on the global cue (Zero/X victory pose after a boss fight). 
 
-While this **does not affect IGT times**, I know some runners care about their RTA splits or simply prefer standard split cues. 
-
-* **Status:** I’m actively refactoring them to use standard victory pose cues and will release them in the coming days.
-* **Early Access:** If you don't mind transition-based splits and want them right now, feel free to **shoot me a DM**!
+While this **does not affect IGT times**, I know some runners care about their RTA splits or simply prefer standard split cues, i'm currently working on remaking them to work on the victory poses instead, but if you'd like the transition autosplits just to try it out, feel free to shoot me a dm on discord: antharas_sunrise.

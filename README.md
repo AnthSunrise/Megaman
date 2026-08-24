@@ -1,6 +1,6 @@
 # Mega Man X4, X5 & X6 DuckStation Autosplitters
 
-Welcome! Some of you may have noticed in recent streams that a few runners have started using a modified version of **LiveSplit** adjusted to work as an **In-Game Time (IGT)** timer for both *Mega Man X5* and *Mega Man X6* as well as Autosplits.
+Welcome! Some of you may have noticed in recent streams that a few runners have started using a **LiveSplit** adjusted to work as an **In-Game Time (IGT)** timer for both *Mega Man X5* and *Mega Man X6* as well as Autosplits for all of the three PS1 games.
 
 While I'm not against sharing my scripts with the community, I initially kept them within a close circle of trust out of caution—mainly due to the slight fear that a bug might ruin a good run. However, due to a few people asking for them through DMs, I’ve decided to share them openly.
 

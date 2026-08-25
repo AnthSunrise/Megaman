@@ -11,7 +11,7 @@ While I'm not against sharing my scripts with the community, i initially kept th
 ### Important Details & Compatibility
 
 * **Platform:** These scripts are designed **exclusively for DuckStation**, we've tested several versions and they seemed to work on most.
-* **Tested Versions:** For X4 i'm only working on USA version, X5 and X6 i'm working on both JAP and USA.
+* **Tested Versions:** For X4 i'm only working on USA version, X5 i'm working on both JAP and USA, X6 i'm working exclusively on JAP version.
 * **Disclaimer:** I am **not** responsible for any lost runs or inaccurate times caused by unexpected bugs.
 
 > [!TIP]
